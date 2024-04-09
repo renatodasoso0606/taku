@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Letter</title>
+    <title>Carta pra sofia</title>
     <style>
         body {
-            background-color: #ffcccc; /* Light Red */
+            background-color: #ffcccc; /* Pastel pink */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,8 +19,8 @@
             position: relative;
             width: 500px;
             height: 300px;
-            background-color: #ff6666; /* Dark Red */
-            border: 4px solid #ffffff; /* White */
+            background-color: #ff6666; /* Pastel red */
+            border: 4px solid #ffffff; 
             border-radius: 10px;
             padding: 20px;
             box-sizing: border-box;
@@ -34,25 +34,38 @@
             transform: translate(-50%, -50%);
             width: 70px;
             height: 70px;
-            background-color: #ffffff; /* White */
+            background-color: #ffffff; 
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ff6666; /* Dark Red */
+            color: #ff6666; /* Pastel red */
             font-size: 20px;
             cursor: pointer;
         }
 
         #letter {
             position: absolute;
-            width: 100%;
-            height: 45s0px;
-            background-color: #ffffff; /* White */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%; /* Modified to be 90% of the envelope width */
+            max-width: 400px; /* Setting the max width to 400px */
+            background-color: #ffffff; 
             border-radius: 10px;
             padding: 20px;
-            text-align: center;
+            text-align: center; /* Centering the letter */
             display: none;
+            animation: fadeIn 1s ease forwards; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -60,23 +73,13 @@
     <div id="envelope" onclick="toggleLetter()">
         <div id="seal">&#10084;</div>
         <div id="letter">
-            <p>-deegii &#9829</p>
-            <p>A heart that's signed by you </p>
-            <p>A heart that beats only for you</p>
-            <p>A year full of surprises, hardships and obstacles</p>
-            <p>Looking back now, it was worth it</p>
-            <p>We made it out together &#129730;<p>
-            <p>The best gift i got this year is having you in my life</p>
-            <p>You're the one gift that is priceless</p>
-            <p>Happy new year &#127876;, hope we're together next year, and the year after that, and the year after that year......</p>
-            <p>I love you 3000 &#10084&#10084&#10084&#10084</p>
+            <p>Your message here</p>
         </div>
     </div>
 
     <script>
         function toggleLetter() {
             var letter = document.getElementById("letter");
-
             letter.style.display = letter.style.display === "none" ? "block" : "none";
         }
     </script>
